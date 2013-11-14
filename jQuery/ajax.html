@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> jQuery - ajax demo</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    <style type="text/css">
+        label {
+            display:block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("#submit").click(function(){
+                $("#container").append("<img src='img/arrow_preloader.gif' alt='preloader' id='preloader' />");
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var comment = $("#comment").val();
+                
+                $.ajax({
+                    url: 'submit_to_server.php',
+                    type: 'POST',
+                    data: 'name=' + name + '&email=' + email + '&comment=' + comment,
+                    success: function( response ){
+                        $("#container").append('<p id="response">' + response + '</p>');
+                        $("#preloader").fadeOut(500, function(){
+                            $(this).remove();
+                        });
+                    }
+                        
+                });
+                
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form method="post" action=".">
+        <div id="container">
+            <label for="name">Name</label><input type="text" name="name" id="name" />
+            <label for="email">Email Address</label><input type="text" name="email" id="email" />
+            <label for="comment">Comments</label><textarea rows="5" cols="35" name="comment" id="comment"></textarea><br />
+            <input type="submit" value="Go!" name="submit" id="submit" />
+        </div>
+    </form>
+</body>

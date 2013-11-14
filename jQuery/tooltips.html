@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    <style type="text/css">
+        #container {
+            width: 400px;
+            margin: auto;
+            margin-top: 5em;
+        }
+        
+        #info {
+            background: #7F7777;
+            width: 300px;
+            padding-bottom: .5em;
+            overflow: hidden;
+            position:absolute;
+        }
+        
+        h4 {
+            padding: .4em 1em;
+            margin: 0 0 .5em 0;
+            background: #292929;
+            color: #9f9f9f;
+            border-bottom: 1px solid #BFBFBF;
+            border-top: 1px solid black;
+        }
+        
+        #info img{
+            float: left;
+            width: 75px;
+            margin: 0 1em 0 1em;
+            padding: .2em;
+            background: white;
+        }
+        
+        #info p{
+            margin-left: 80px;
+            margin-top: 0;
+            padding: 0 0 0 2em;
+            
+        }
+    </style>
+    
+    <script type="text/javascript">
+        $(function(){
+            $('a').hover(function( e ){
+                var html = "<div id='info'>";
+                    html += "<h4>Title will got right here.</h4>";
+                    html += "<img src='img/tooltips/image.jpg' />";
+                    html += "<p>IMCrowd is a crowd simulator where the collective behaviors will emerge out of the social process such as emotion contagion and conformity effect among individual agents.</p>"
+                $("#container").append(html).children("#info").hide().fadeIn(400);
+                $("#info").css('top', e.pageY - 20).css('left', e.pageX + 70);               
+            }, function(){
+                $('#info').remove();
+            });
+            
+            $('a').mousemove(function(e){
+                $("#info").css('top', e.pageY -20).css('left', e.pageX + 70);
+            });
+ 
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <a href="#">Some Movie</a>
+    </div>
+</body>

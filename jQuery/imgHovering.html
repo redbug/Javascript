@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <script type="text/javascript" src="lib/jquery-1.5.1.min.js"></script>
+    <style type="text/css">
+        a img{
+            border: none;
+        }
+        
+        #largerImage {
+            position: absolute;
+            padding: .5em;
+            background: #e3e3e3;
+            border: 1px solid #bfbfbf;
+        }
+    </style>
+    <script type="text/javascript">
+        var offsetX = 20;
+        var offsetY = 10;
+        
+        $(function(){
+            $('a').hover(function( e ){
+                //mouse on
+                var href = $(this).attr("href");
+                $('<img id="largerImage" '+ 'src="' + href +'" alt="image" />')
+                .css("top", e.pageY + offsetY)
+                .css("left", e.pageX + offsetX)
+                .appendTo('body');
+                
+            }, function(){
+                //mouse off
+                $("#largerImage").remove();
+            });
+            
+            $('a').mousemove(function( e ){
+                $("#largerImage")
+                .css("top", e.pageY + offsetY)
+                .css("left", e.pageX + offsetX);
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="img/imgHovering/one.jpg"><img src="img/imgHovering/oneTN.jpg" alt="Image"></a>
+    <a href="img/imgHovering/two.jpg"><img src="img/imgHovering/twoTN.jpg" alt="Image"></a>
+    <a href="img/imgHovering/three.jpg"><img src="img/imgHovering/threeTN.jpg" alt="Image"></a>
+    
+</body>
+</html>

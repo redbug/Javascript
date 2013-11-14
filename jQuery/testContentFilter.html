@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title> jQuery - test string matching</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+
+    <script type="text/javascript">    
+        $(function(){
+            var offsensive_content = ["殺人","殺害","殺夫","殺妻","虐殺","殺父","殺母","致死","致命","活埋","埋屍","剁屍","傷害","手刃","毒死","下毒","毒害","掐死","掐喉","勒死","勒斃","斃命","溺斃","溺死","砍人","砍傷","偷竊","偷窺","強盜","竊盜","搶奪","擄人勒索","勒索","恐嚇取財","恐嚇","挑釁","恫嚇","剝奪自由","綁架","撕票","劫持","強姦","強暴","猥褻","施暴","輪姦","姦屍","性侵","侵犯身體","強制性交","嫖妓","鬥毆","圍毆","毆打","攻擊","扁人","霸凌","欺淩","淩虐","施虐","凌虐致死","虐童","虐待動物","虐嬰","挑釁","辱罵","互歐","嘲弄","誹謗","妨害自由","公然侮辱","騷擾","跟蹤","欺騙",">詐騙","拐騙","買賣兒童","販賣人口","販嬰","販毒","吸毒","運毒","嗑藥","餵毒","拉K","酗酒","放火","縱火","引暴瓦斯","自殺","輕生","自殘","自虐","上吊","吊死","跳樓","跳河","放火自焚","割腕","切腹","食毒","服毒","自刎","割喉","輾斃","撞傷","撞死","杀人","杀害","杀夫","杀妻","虐杀","杀父","杀母","致死","致命","活埋","埋尸","剁尸","伤害","手刃","毒死","下毒","毒害","掐死","掐喉","勒死","勒毙","毙命","溺毙","溺死","砍>人","砍伤","偷窃","偷窥","强盗","窃盗","抢夺","掳人勒索","勒索","恐吓取财","恐吓","挑衅","恫吓","剥夺自由","绑架","撕票","劫持","强奸","强>暴","猥亵","施暴","轮奸","奸尸","性侵","侵犯身体","强制性交","嫖妓","斗殴","围殴","殴打","攻击","扁人","霸凌","欺凌","凌虐","施虐","凌虐致>死","虐童","虐待动物","虐婴","挑衅","辱骂","互欧","嘲弄","诽谤","妨害自由","公然侮辱","骚扰","跟踪","欺骗","诈骗","拐骗","买卖儿童","贩卖人口","贩婴","贩毒","吸毒","运毒","嗑药","喂毒","拉K","酗酒","放火","纵火","引暴瓦斯","自杀","轻生","自残","自虐","上吊","吊死","跳楼","跳河","放火自焚","割腕","切腹","食毒","服毒","自刎","割喉","辗毙","撞伤","撞死","murder","murder wife","murder husband","brutal murder","murder mom","lethal","deadly","buried alive","cut dead","poison","poisoned","strangled","strangulation","killed","drowned","drowning","knives to injure","chopped","theft","peeping","robbers","theft","robbery","extortion kidnappings","extortion","intimidation to take money","intimidation","provocation","intimidation","deprivation of liberty","kidnapping","threatened to kill","kidnapping","rape","rape","indecent assault","violence","gang rape","necrophilia","sexual assault","violations of physical","forcible","prostitution","assault","hit","beaten","attacked","flat people","bullying","bullying","abuse","abusive","victim of child abuse","child abuse","animal abuse","child infant","provocative","insulting each other in Europe","mockery","slander","and obstruction of freedom","an affront","harass","stalk","deception","fraud","abduction","sale of children","human trafficking","trafficking in infants","drug trafficking","drug use","trafficking","drugs","pulling K","alcohol","arson","arson","violence cited gas","suicide","self-mutilation","self-torture","hanging","hanging","jumping","jumping into a river","set fire to self-immolation","cut wrist","ritual","food poisoning","poison","committing suicide","cut-throat","crushed to death"];
+            var test_content = "我殺人又殺夫又贩卖人口伤害&committing suicide";            
+            
+            for(index in offsensive_content){
+                var result = test_content.match(offsensive_content[index]);
+                if(result){
+                    alert(result);
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+</body>

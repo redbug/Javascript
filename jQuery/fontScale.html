@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <script type="text/javascript" src="lib/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('a').click(function(){
+                var font_size = $('p').css('font-size');
+                var num = parseFloat(font_size);
+                var unit = font_size.slice(-2);
+                
+                console.log(num);
+                console.log(unit);
+                
+                $('p').css('font-size', num / 1.4 + unit);
+                    
+                if(this.id == "larger"){
+                    
+                    
+                    // var func = function() {
+                    //      $('p').css('font-size', num * 1.4 + unit);
+                    //  }
+                    //  setTimeout(func, 1000);
+                    
+                    
+                    for(var i=0; i<10000; ++i){
+                         console.log("trace");
+                    }
+                    $('p').css('font-size', num * 1.4 + unit);
+                    
+                    
+                }
+                return false;
+            });
+        })
+        
+        
+    </script>
+</head>
+<body>
+    <a href="#" id="larger">Larger</a><br />
+    <a href="#" id="smaller">Smaller</a>
+    <p>
+       IMCrowd is a crowd simulator where the collective behaviors will emerge out of the social process such as emotion contagion and conformity effect among individual agents.
+    </p>
+</body>
+</html>
